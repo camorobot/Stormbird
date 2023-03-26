@@ -5,50 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72303d58-6a25-4496-ab74-91fc688517d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/buttons/PlayButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/imageEntitys/StormBirdImg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/TitleSceneBird.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/audio/die.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/audio/die.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/audio/hit.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/audio/hit.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/audio/point.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/audio/point.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/audio/swoosh.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/audio/swoosh.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/audio/wing.ogg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/audio/wing.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/backgrounds/background-day.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/backgrounds/background-night.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/PlayGame.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/Stormbird.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/base.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/bluebird-downflap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/bluebird-midflap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/bluebird-upflap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/gameover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/message.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/pipe-green.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/pipe-red.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/redbird-downflap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/redbird-midflap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/redbird-upflap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/yellowbird-downflap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/yellowbird-midflap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/yellowbird-upflap.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/Stormbird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/Stormbird.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/TitleSceneBird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/TitleSceneBird.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/TitleScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/TitleScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679755275440</updated>
-      <workItem from="1679755276616" duration="3613000" />
+      <workItem from="1679755276616" duration="8908000" />
     </task>
     <servers />
   </component>
