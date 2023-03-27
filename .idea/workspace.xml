@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72303d58-6a25-4496-ab74-91fc688517d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/Bird.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/PlayerBird.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/Ground.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/GameScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/base-long.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/Stormbird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/Stormbird.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/buttons/PlayButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/buttons/PlayButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/TitleSceneBird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/TitleSceneBird.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/TitleScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/TitleScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/PlayerBird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/PlayerBird.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/Ground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/Ground.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
