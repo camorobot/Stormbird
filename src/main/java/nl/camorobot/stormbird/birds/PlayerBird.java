@@ -11,18 +11,22 @@ import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
+import nl.camorobot.stormbird.Stormbird;
 
 import java.util.List;
 import java.util.Set;
 
 public class PlayerBird extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, KeyListener, Newtonian, Bird, Collided {
-    public PlayerBird(String sprite, Coordinate2D initialLocation) {
+
+    private Stormbird stormbird;
+
+    public PlayerBird(Stormbird stormbird, String sprite, Coordinate2D initialLocation) {
         super(sprite, initialLocation, new Size(60,60));
+        this.stormbird = stormbird;
         setAnchorPoint(AnchorPoint.CENTER_CENTER);
         setGravityConstant(0.75);
         setFrictionConstant(0.05);
     }
-
 
     @Override
     public void jump() {
@@ -33,6 +37,8 @@ public class PlayerBird extends DynamicSpriteEntity implements SceneBorderCrossi
     public void onPressedKeysChange(Set<KeyCode> set) {
         if(set.contains(KeyCode.SPACE)){
             jump();
+        } else if (set == null) {
+            System.out.println("oeps!");
         }
     }
 
@@ -40,11 +46,11 @@ public class PlayerBird extends DynamicSpriteEntity implements SceneBorderCrossi
     public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
         setAnchorPoint(AnchorPoint.CENTER_CENTER);
         setAnchorLocation(new Coordinate2D(getWidth() / 2, getHeight() / 2));
-        // die the bird;
+        stormbird.setActiveScene(0);
     }
 
     @Override
     public void onCollision(List<Collider> list) {
-        System.out.println("die");
+        stormbird.setActiveScene(0);
     }
 }
