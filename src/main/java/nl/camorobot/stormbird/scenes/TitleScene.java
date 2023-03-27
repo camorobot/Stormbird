@@ -12,9 +12,9 @@ import java.util.Random;
 public class TitleScene extends DynamicScene {
 
     private Stormbird stormbird;
-    int birdColor;
-    String sprite;
-    Random randBirdSprite = new Random();
+    private int birdColor;
+    private String sprite;
+    private Random randBirdSprite = new Random();
 
 
     public TitleScene(Stormbird stormbird){
@@ -43,6 +43,6 @@ public class TitleScene extends DynamicScene {
             addEntity(new TitleSceneBird(sprite, new Coordinate2D(getWidth()/2, getHeight()/2 + 50)));
         }
         addEntity(new StormBirdImg());
-        addEntity(new PlayButton(new Coordinate2D(getWidth()/2, getHeight()/2 - 50)));
+        addEntity(new PlayButton(stormbird, new Coordinate2D(getWidth()/2, getHeight()/2 - 50)));
     }
 }
