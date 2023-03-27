@@ -2,6 +2,7 @@ package nl.camorobot.stormbird;
 
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
+import nl.camorobot.stormbird.scenes.TitleScene;
 
 public class Stormbird extends YaegerGame {
     public static void main(String[] args){
@@ -10,12 +11,12 @@ public class Stormbird extends YaegerGame {
 
     @Override
     public void setupGame() {
-        setGameTitle("Sormbird");
-        setSize(new Size(450, 700));
+        setGameTitle("Stormbird");
+        setSize(new Size(500, 750));
     }
 
     @Override
     public void setupScenes() {
-
+        addScene(0, new TitleScene(this));
     }
 }
