@@ -4,14 +4,14 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import nl.camorobot.stormbird.Stormbird;
 import nl.camorobot.stormbird.assets.buttons.PlayButton;
+import nl.camorobot.stormbird.assets.imageEntitys.GameOverImg;
 import nl.camorobot.stormbird.assets.imageEntitys.StormBirdImg;
 import nl.camorobot.stormbird.birds.TitleSceneBird;
 import nl.camorobot.stormbird.player.Player;
 
 import java.util.Random;
 
-public class TitleScene extends DynamicScene {
-
+public class GameOverScene extends DynamicScene {
     private Stormbird stormbird;
     private Player player;
     private int birdColor;
@@ -19,7 +19,7 @@ public class TitleScene extends DynamicScene {
     private Random randBirdSprite = new Random();
 
 
-    public TitleScene(Stormbird stormbird, Player player){
+    public GameOverScene(Stormbird stormbird, Player player){
         this.stormbird = stormbird;
         this.player = player;
     }
@@ -43,9 +43,9 @@ public class TitleScene extends DynamicScene {
             } else if (birdColor == 2) {
                 sprite = "sprites/redBird-upflap.png";
             }
-            addEntity(new TitleSceneBird(sprite, new Coordinate2D(getWidth()/2, getHeight()/2 + 50)));
+            addEntity(new TitleSceneBird(sprite, new Coordinate2D(0, getHeight()/2 + 50)));
         }
-        addEntity(new StormBirdImg());
+        addEntity(new GameOverImg(getWidth()/2, 100));
         addEntity(new PlayButton(stormbird, new Coordinate2D(getWidth()/2, getHeight()/2 - 50)));
     }
 }

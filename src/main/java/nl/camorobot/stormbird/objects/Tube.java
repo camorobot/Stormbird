@@ -12,8 +12,8 @@ import java.util.*;
 
 public class Tube extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, Collider {
 
-    private double width;
-    private double height;
+    private double x;
+    private double y;
 
     public int tubeNumber;
 
@@ -24,10 +24,10 @@ public class Tube extends DynamicSpriteEntity implements SceneBorderCrossingWatc
     private List<Integer> bottomTubes = Arrays.asList(650, 800, 900, 1000);
 
 
-    public Tube(String sprite, String direction, double width, double height) {
-        super(sprite, new Coordinate2D(width, height));
-        this.width = width;
-        this.height = height;
+    public Tube(String sprite, String direction, double x, double y) {
+        super(sprite, new Coordinate2D(x, y));
+        this.x = x;
+        this.y = y;
         this.direction = direction;
         setAnchorPoint(AnchorPoint.CENTER_CENTER);
         setMotion(6, 270d);
@@ -36,9 +36,9 @@ public class Tube extends DynamicSpriteEntity implements SceneBorderCrossingWatc
     @Override
     public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
         if(direction == "top"){
-            setAnchorLocation(new Coordinate2D(width + 50, topTubes.get(getTubeNumber())));
+            setAnchorLocation(new Coordinate2D(x + 50, topTubes.get(getTubeNumber())));
         } else{
-            setAnchorLocation(new Coordinate2D(width+ 50, bottomTubes.get(getTubeNumber())));
+            setAnchorLocation(new Coordinate2D(x+ 50, bottomTubes.get(getTubeNumber())));
         }
     }
 
