@@ -7,7 +7,6 @@ import nl.camorobot.stormbird.assets.text.ScoreText;
 import nl.camorobot.stormbird.birds.PlayerBird;
 import nl.camorobot.stormbird.objects.Ground;
 import nl.camorobot.stormbird.objects.Tube;
-import nl.camorobot.stormbird.objects.coins.Coin;
 import nl.camorobot.stormbird.objects.coins.SilverCoin;
 import nl.camorobot.stormbird.player.Player;
 
@@ -47,9 +46,10 @@ public class GameScene extends DynamicScene {
         /**Generate the tubes*/
         var scoreText = new ScoreText(new Coordinate2D(0, 0));
         addEntity(scoreText);
-        topTube = new Tube("sprites/pipe-green-top-2.png", "top", scoreText,getWidth(), -349);
-        bottomTube = new Tube("sprites/pipe-green-bottom-2.png", "bottom" , getWidth(), -349);
         silverCoin = new SilverCoin(player, getWidth(), -349);
+        topTube = new Tube("sprites/pipe-green-top-2.png", "top", scoreText, getWidth(), -349);
+        bottomTube = new Tube("sprites/pipe-green-bottom-2.png", "bottom" , getWidth(), -349);
+
 
 
         /**Timer for generating new tube location*/
@@ -59,6 +59,7 @@ public class GameScene extends DynamicScene {
                 nextTube = topTube.getRandomTube();
                 topTube.setTubeNumber(nextTube);
                 bottomTube.setTubeNumber(nextTube);
+                silverCoin.setTubeNumber(nextTube);
             }
         };
         timerTubeGenerator.schedule(task, new Date(), 1000);
