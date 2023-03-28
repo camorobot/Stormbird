@@ -4,8 +4,12 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import nl.camorobot.stormbird.Stormbird;
 import nl.camorobot.stormbird.assets.buttons.PlayButton;
+import nl.camorobot.stormbird.assets.buttons.PlayerButton;
+import nl.camorobot.stormbird.assets.imageEntitys.PlayerImg;
 import nl.camorobot.stormbird.assets.imageEntitys.StormBirdImg;
+import nl.camorobot.stormbird.assets.text.PlayerUsernameText;
 import nl.camorobot.stormbird.birds.TitleSceneBird;
+import nl.camorobot.stormbird.dao.PlayerDAO;
 import nl.camorobot.stormbird.player.Player;
 
 import java.util.Random;
@@ -14,6 +18,11 @@ public class TitleScene extends DynamicScene {
 
     private Stormbird stormbird;
     private Player player;
+    private PlayerDAO playerDAO;
+    private PlayerUsernameText playerUsernameTextKevin;
+    private PlayerUsernameText playerUsernameTextFlappy;
+
+
     private int birdColor;
     private String sprite;
     private Random randBirdSprite = new Random();
@@ -22,6 +31,7 @@ public class TitleScene extends DynamicScene {
     public TitleScene(Stormbird stormbird, Player player){
         this.stormbird = stormbird;
         this.player = player;
+        playerDAO = new PlayerDAO(player);
     }
 
     @Override
@@ -47,5 +57,14 @@ public class TitleScene extends DynamicScene {
         }
         addEntity(new StormBirdImg());
         addEntity(new PlayButton(stormbird, new Coordinate2D(getWidth()/2, getHeight()/2 - 50)));
+
+
+        playerUsernameTextKevin = new PlayerUsernameText("Kevin",getWidth()/3, getHeight()/2 + 135);
+        addEntity(playerUsernameTextKevin);
+        addEntity(new PlayerButton(playerUsernameTextKevin, new Coordinate2D(getWidth()/3, getHeight()/2 + 100)));
+
+        playerUsernameTextFlappy = new PlayerUsernameText("Flappy",getWidth()/3 * 2, getHeight()/2 + 135);
+        addEntity(playerUsernameTextFlappy);
+        addEntity(new PlayerButton(playerUsernameTextFlappy, new Coordinate2D(getWidth()/3 * 2, getHeight()/2 + 100)));
     }
 }
