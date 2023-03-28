@@ -10,8 +10,7 @@ import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import nl.camorobot.stormbird.player.Player;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class SilverCoin extends DynamicSpriteEntity implements Coin, SceneBorderCrossingWatcher, Collided {
 
@@ -20,12 +19,13 @@ public class SilverCoin extends DynamicSpriteEntity implements Coin, SceneBorder
     private double x;
     private double y;
     private int coinValue = 1;
+    private boolean coinhit = false;
 
     public int tubeNumber;
     private List<Integer> coinPosition = Arrays.asList(250, 350, 450, 550);
 
     public SilverCoin(Player player, double x, double y){
-        super("sprites/silverCoin.png", new Coordinate2D(x, y), new Size(80,80));
+        super("sprites/silverCoin.png", new Coordinate2D(x, y));
         this.player = player;
         this.x = x;
         this.y = y;
@@ -35,13 +35,28 @@ public class SilverCoin extends DynamicSpriteEntity implements Coin, SceneBorder
 
     @Override
     public void incrementCoins() {
-        int currentCoins = player.getCoins();
-        player.setCoins(currentCoins + coinValue);
+        if(!coinhit){
+            coinhit = true;
+            Timer timerIncrementCoins = new Timer();
+            TimerTask task = new TimerTask() {
+                public void run() {
+                    int currentCoins = player.getCoins();
+                    player.setCoins(currentCoins + coinValue);
+                    System.out.println(player.getCoins());
+                    coinhit = false;
+                }
+            };
+            timerIncrementCoins.schedule(task, 1000);
+        }
+
+
+
     }
 
     @Override
     public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
-        setAnchorLocation(new Coordinate2D(x + 50, coinPosition.get(tubeNumber)));
+        setMotion(6, 270d);
+        setAnchorLocation(new Coordinate2D(x + 25, coinPosition.get(tubeNumber)));
     }
 
     public void setTubeNumber(int tubeNumber) {

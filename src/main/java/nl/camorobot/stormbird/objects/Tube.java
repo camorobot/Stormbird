@@ -2,13 +2,13 @@ package nl.camorobot.stormbird.objects;
 
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import nl.camorobot.stormbird.Exceptions.ScoreException;
 import nl.camorobot.stormbird.assets.text.ScoreText;
+import nl.camorobot.stormbird.objects.coins.SilverCoin;
 
 import java.util.*;
 
@@ -35,7 +35,7 @@ public class Tube extends DynamicSpriteEntity implements SceneBorderCrossingWatc
         setMotion(6, 270d);
     }
 
-    public Tube(String sprite, String direction, ScoreText scoreText,double x, double y) {
+    public Tube(String sprite, String direction, ScoreText scoreText, double x, double y) {
         super(sprite, new Coordinate2D(x, y));
         this.x = x;
         this.y = y;
@@ -48,14 +48,14 @@ public class Tube extends DynamicSpriteEntity implements SceneBorderCrossingWatc
     @Override
     public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
         if(direction == "top"){
-            setAnchorLocation(new Coordinate2D(x + 50, topTubes.get(getTubeNumber())));
+            setAnchorLocation(new Coordinate2D(x + 30, topTubes.get(getTubeNumber())));
             try {
                 scoreText.setScore(scoreText.getScore() + 1);
             } catch (NullPointerException e){
                 throw new ScoreException(e);
             }
         } else{
-            setAnchorLocation(new Coordinate2D(x+ 50, bottomTubes.get(getTubeNumber())));
+            setAnchorLocation(new Coordinate2D(x+ 30, bottomTubes.get(getTubeNumber())));
         }
     }
 
