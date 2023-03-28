@@ -46,11 +46,11 @@ public class PlayerBird extends DynamicSpriteEntity implements SceneBorderCrossi
     public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
         setAnchorPoint(AnchorPoint.CENTER_CENTER);
         setAnchorLocation(new Coordinate2D(getWidth() / 2, getHeight() / 2));
-        stormbird.setActiveScene(0);
+        stormbird.setActiveScene(2);
     }
 
     @Override
     public void onCollision(List<Collider> list) {
-        stormbird.setActiveScene(0);
+        stormbird.setActiveScene(2);
     }
 }

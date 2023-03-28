@@ -8,6 +8,7 @@ import nl.camorobot.stormbird.objects.Ground;
 import nl.camorobot.stormbird.objects.Tube;
 import nl.camorobot.stormbird.objects.coins.Coin;
 import nl.camorobot.stormbird.objects.coins.SilverCoin;
+import nl.camorobot.stormbird.player.Player;
 
 import java.util.Date;
 import java.util.Timer;
@@ -16,14 +17,17 @@ import java.util.TimerTask;
 public class GameScene extends DynamicScene {
 
     private Stormbird stormbird;
+    private Player player;
     private String sprite;
     private int nextTube;
 
     Tube topTube;
     Tube bottomTube;
+    SilverCoin silverCoin;
 
-    public GameScene(Stormbird stormbird){
+    public GameScene(Stormbird stormbird, Player player){
         this.stormbird = stormbird;
+        this.player = player;
         sprite = "sprites/yellowBird-midflap.png";
     }
 
@@ -42,6 +46,7 @@ public class GameScene extends DynamicScene {
         /**Generate the tubes*/
         topTube = new Tube("sprites/pipe-green-top-2.png", "top", getWidth(), -349);
         bottomTube = new Tube("sprites/pipe-green-bottom-2.png", "bottom" , getWidth(), -349);
+        silverCoin = new SilverCoin(player, getWidth(), -349);
 
 
         /**Timer for generating new tube location*/
@@ -59,6 +64,7 @@ public class GameScene extends DynamicScene {
         addEntity(new PlayerBird(stormbird, sprite, new Coordinate2D(getWidth() / 2, getHeight() / 2)));
         addEntity(topTube);
         addEntity(bottomTube);
+        addEntity(silverCoin);
 
         for(int numberOfGroundEntitys = 1; numberOfGroundEntitys <= 20; numberOfGroundEntitys++){
             addEntity(new Ground(getWidth() * numberOfGroundEntitys, getHeight()));

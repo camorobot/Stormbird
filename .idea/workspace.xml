@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72303d58-6a25-4496-ab74-91fc688517d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/Tube.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/coins/Coin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/coins/SilverCoin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/goldCoin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/pipe-green-bottom-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/pipe-green-bottom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/pipe-green-top-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/pipe-green-top.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/silverCoin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/imageEntitys/GameOverImg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/player/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/GameOverScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/Stormbird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/Stormbird.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/PlayerBird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/PlayerBird.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/Ground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/Ground.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/Tube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/coins/SilverCoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/coins/SilverCoin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/GameScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/TitleScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/TitleScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +62,10 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "inlay.hints",
     "vue.rearranger.settings.migration": "true"
   }
