@@ -3,6 +3,7 @@ package nl.camorobot.stormbird.scenes;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import nl.camorobot.stormbird.Stormbird;
+import nl.camorobot.stormbird.assets.text.ScoreText;
 import nl.camorobot.stormbird.birds.PlayerBird;
 import nl.camorobot.stormbird.objects.Ground;
 import nl.camorobot.stormbird.objects.Tube;
@@ -44,7 +45,9 @@ public class GameScene extends DynamicScene {
     @Override
     public void setupEntities() {
         /**Generate the tubes*/
-        topTube = new Tube("sprites/pipe-green-top-2.png", "top", getWidth(), -349);
+        var scoreText = new ScoreText(new Coordinate2D(0, 0));
+        addEntity(scoreText);
+        topTube = new Tube("sprites/pipe-green-top-2.png", "top", scoreText,getWidth(), -349);
         bottomTube = new Tube("sprites/pipe-green-bottom-2.png", "bottom" , getWidth(), -349);
         silverCoin = new SilverCoin(player, getWidth(), -349);
 
@@ -61,7 +64,7 @@ public class GameScene extends DynamicScene {
         timerTubeGenerator.schedule(task, new Date(), 1000);
 
         /**Add Entity's to field*/
-        addEntity(new PlayerBird(stormbird, sprite, new Coordinate2D(getWidth() / 2, getHeight() / 2)));
+        addEntity(new PlayerBird(stormbird, sprite,new Coordinate2D(getWidth() / 2, getHeight() / 2)));
         addEntity(topTube);
         addEntity(bottomTube);
         addEntity(silverCoin);

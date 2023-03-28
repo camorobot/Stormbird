@@ -12,6 +12,7 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import nl.camorobot.stormbird.Stormbird;
+import nl.camorobot.stormbird.assets.text.ScoreText;
 
 import java.util.List;
 import java.util.Set;
@@ -20,7 +21,7 @@ public class PlayerBird extends DynamicSpriteEntity implements SceneBorderCrossi
 
     private Stormbird stormbird;
 
-    public PlayerBird(Stormbird stormbird, String sprite, Coordinate2D initialLocation) {
+    public PlayerBird(Stormbird stormbird, String sprite,Coordinate2D initialLocation) {
         super(sprite, initialLocation, new Size(60,60));
         this.stormbird = stormbird;
         setAnchorPoint(AnchorPoint.CENTER_CENTER);
