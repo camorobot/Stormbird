@@ -19,6 +19,12 @@
             <artifactId>yaeger</artifactId>
             <version>2022.2023</version>
         </dependency>
+        <!-- SQL SERVER microsoft -->
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>6.1.0.jre8</version>
+        </dependency>
     </dependencies>
 
 </project>
