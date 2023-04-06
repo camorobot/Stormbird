@@ -2,7 +2,6 @@ package nl.camorobot.stormbird.objects.coins;
 
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
@@ -12,7 +11,7 @@ import nl.camorobot.stormbird.player.Player;
 
 import java.util.*;
 
-public class SilverCoin extends DynamicSpriteEntity implements Coin, SceneBorderCrossingWatcher, Collided {
+public class SilverCoin extends Coin {
 
     private Player player;
 
@@ -25,7 +24,7 @@ public class SilverCoin extends DynamicSpriteEntity implements Coin, SceneBorder
     private List<Integer> coinPosition = Arrays.asList(250, 350, 450, 550);
 
     public SilverCoin(Player player, double x, double y){
-        super("sprites/silverCoin.png", new Coordinate2D(x, y));
+        super("sprites/silverCoin.png", player, x, y);
         this.player = player;
         this.x = x;
         this.y = y;
@@ -42,29 +41,10 @@ public class SilverCoin extends DynamicSpriteEntity implements Coin, SceneBorder
                 public void run() {
                     int currentCoins = player.getCoins();
                     player.setCoins(currentCoins + coinValue);
-                    System.out.println(player.getCoins());
                     coinhit = false;
                 }
             };
             timerIncrementCoins.schedule(task, 1000);
         }
-
-
-
-    }
-
-    @Override
-    public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
-        setMotion(6, 270d);
-        setAnchorLocation(new Coordinate2D(x + 25, coinPosition.get(tubeNumber)));
-    }
-
-    public void setTubeNumber(int tubeNumber) {
-        this.tubeNumber = tubeNumber;
-    }
-
-    @Override
-    public void onCollision(List<Collider> list) {
-        incrementCoins();
     }
 }
