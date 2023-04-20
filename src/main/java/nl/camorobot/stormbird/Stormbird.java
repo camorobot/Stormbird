@@ -9,6 +9,8 @@ import nl.camorobot.stormbird.scenes.ShopScene;
 import nl.camorobot.stormbird.scenes.TitleScene;
 
 public class Stormbird extends YaegerGame {
+    Player player = new Player(this);
+
     public static void main(String[] args){
         launch(args);
     }
