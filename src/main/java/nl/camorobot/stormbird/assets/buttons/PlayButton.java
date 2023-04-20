@@ -11,8 +11,9 @@ public class PlayButton extends SpriteEntity implements MouseButtonPressedListen
 
     private Stormbird stormbird;
 
-    public PlayButton(Coordinate2D coordinate2D){
+    public PlayButton(Stormbird stormbird, Coordinate2D coordinate2D){
         super("sprites/PlayGame.png", coordinate2D);
+        this.stormbird = stormbird;
         setAnchorPoint(AnchorPoint.CENTER_CENTER);
     }
 
