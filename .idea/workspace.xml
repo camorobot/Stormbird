@@ -4,9 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72303d58-6a25-4496-ab74-91fc688517d0" name="Changes" comment="">
+    <list default="true" id="72303d58-6a25-4496-ab74-91fc688517d0" name="Changes" comment="Add Game Over Scene">
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/buttons/BackButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/buttons/ShopButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/text/CoinsText.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/ShopBird.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/ShopScene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/backButton.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/greenbird-midflap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/pinkbird-midflap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/shop.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/TitleSceneBird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/TitleSceneBird.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/Stormbird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/Stormbird.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/buttons/PlayerButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/buttons/PlayerButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/text/PlayerUsernameText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/text/PlayerUsernameText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/PlayerBird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/PlayerBird.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/coins/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/coins/Coin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/coins/SilverCoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/coins/SilverCoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/GameScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/TitleScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/TitleScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,6 +101,11 @@
       <option name="presentableId" value="Default" />
       <updated>1679755275440</updated>
       <workItem from="1679755276616" duration="8908000" />
+      <workItem from="1680124888600" duration="397000" />
+      <workItem from="1680207574487" duration="613000" />
+      <workItem from="1680770266378" duration="2136000" />
+      <workItem from="1681895524397" duration="1230000" />
+      <workItem from="1682004349717" duration="8960000" />
     </task>
     <servers />
   </component>
