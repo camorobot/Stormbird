@@ -8,16 +8,20 @@ import nl.camorobot.stormbird.assets.buttons.PlayerButton;
 import nl.camorobot.stormbird.assets.buttons.ShopButton;
 import nl.camorobot.stormbird.assets.imageEntitys.PlayerImg;
 import nl.camorobot.stormbird.assets.imageEntitys.StormBirdImg;
+import nl.camorobot.stormbird.assets.text.PlayerUsernameText;
 import nl.camorobot.stormbird.birds.TitleSceneBird;
+import nl.camorobot.stormbird.dao.PlayerDAO;
+import nl.camorobot.stormbird.player.Player;
 
 import java.util.Random;
 
 public class TitleScene extends DynamicScene {
 
     private Stormbird stormbird;
-    int birdColor;
-    String sprite;
-    Random randBirdSprite = new Random();
+    private Player player;
+    private PlayerDAO playerDAO;
+    private PlayerUsernameText playerUsernameTextKevin;
+    private PlayerUsernameText playerUsernameTextFlappy;
 
 
     private int birdColor;
@@ -28,6 +32,8 @@ public class TitleScene extends DynamicScene {
 
     public TitleScene(Stormbird stormbird, Player player){
         this.stormbird = stormbird;
+        this.player = player;
+        playerDAO = new PlayerDAO(player);
     }
 
     @Override
