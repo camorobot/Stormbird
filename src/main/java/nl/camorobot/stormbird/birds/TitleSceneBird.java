@@ -7,14 +7,12 @@ import com.github.hanyaeger.api.entities.Newtonian;
 import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
-import javafx.scene.input.KeyCode;
 
 import java.util.Random;
-import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class TitleSceneBird extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, Newtonian {
+public class TitleSceneBird extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, Newtonian, Bird {
 
     Timer timerJump = new Timer("JumpBird");
     Random randJumpMoment = new Random();
@@ -46,6 +44,7 @@ public class TitleSceneBird extends DynamicSpriteEntity implements SceneBorderCr
         timerJump.schedule(task, delay);
     }
 
+    @Override
     public void jump() {
         setMotion(8, 135d);
     }
