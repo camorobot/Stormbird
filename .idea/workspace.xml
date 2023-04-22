@@ -5,24 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72303d58-6a25-4496-ab74-91fc688517d0" name="Changes" comment="Add Game Over Scene">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/buttons/BackButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/buttons/ShopButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/text/CoinsText.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/ShopBird.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/ShopScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/backButton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/greenbird-midflap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/pinkbird-midflap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/shop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/Eric.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/Stormy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/Towelie-select.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/Towelie.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/Stormbird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/Stormbird.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/buttons/PlayerButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/buttons/PlayerButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/text/PlayerUsernameText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/text/PlayerUsernameText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/PlayerBird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/PlayerBird.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/coins/Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/coins/Coin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/coins/SilverCoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/coins/SilverCoin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/GameScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/text/PlayerUsernameText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/text/CurrentPlayerText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/dao/DatabaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/dao/DatabaseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/dao/PlayerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/dao/PlayerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/GameOverScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/GameOverScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/TitleScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/TitleScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sprites/player.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +65,13 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlserver"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -106,6 +108,8 @@
       <workItem from="1680770266378" duration="2136000" />
       <workItem from="1681895524397" duration="1230000" />
       <workItem from="1682004349717" duration="8960000" />
+      <workItem from="1682063847547" duration="61000" />
+      <workItem from="1682095685879" duration="8644000" />
     </task>
     <servers />
   </component>
@@ -114,5 +118,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
