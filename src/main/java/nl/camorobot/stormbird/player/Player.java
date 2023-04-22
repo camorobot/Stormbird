@@ -2,6 +2,8 @@ package nl.camorobot.stormbird.player;
 
 import nl.camorobot.stormbird.Stormbird;
 
+import java.util.ArrayList;
+
 public class Player {
     private Stormbird stormbird;
 
@@ -9,6 +11,7 @@ public class Player {
     private String username;
     private int coins;
     private int highScore;
+    private ArrayList<Integer> skins;
 
     public Player(Stormbird stormbird){
         this.stormbird = stormbird;
@@ -44,5 +47,25 @@ public class Player {
 
     public void setUsername(String username){
         this.username = username;
+    }
+
+    public ArrayList<Integer> getSkins() {
+        return skins;
+    }
+
+    public void setSkins(ArrayList<Integer> skins) {
+        this.skins = skins;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "stormbird=" + stormbird +
+                ", player_id=" + player_id +
+                ", username='" + username + '\'' +
+                ", coins=" + coins +
+                ", highScore=" + highScore +
+                ", skins=" + skins +
+                '}';
     }
 }

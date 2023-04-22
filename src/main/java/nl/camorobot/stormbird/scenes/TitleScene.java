@@ -1,14 +1,14 @@
 package nl.camorobot.stormbird.scenes;
 
 import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import nl.camorobot.stormbird.Stormbird;
 import nl.camorobot.stormbird.assets.buttons.PlayButton;
 import nl.camorobot.stormbird.assets.buttons.PlayerButton;
 import nl.camorobot.stormbird.assets.buttons.ShopButton;
-import nl.camorobot.stormbird.assets.imageEntitys.PlayerImg;
 import nl.camorobot.stormbird.assets.imageEntitys.StormBirdImg;
-import nl.camorobot.stormbird.assets.text.PlayerUsernameText;
+import nl.camorobot.stormbird.assets.text.CurrentPlayerText;
 import nl.camorobot.stormbird.birds.TitleSceneBird;
 import nl.camorobot.stormbird.dao.PlayerDAO;
 import nl.camorobot.stormbird.player.Player;
@@ -20,8 +20,8 @@ public class TitleScene extends DynamicScene {
     private Stormbird stormbird;
     private Player player;
     private PlayerDAO playerDAO;
-    private PlayerUsernameText playerUsernameTextKevin;
-    private PlayerUsernameText playerUsernameTextFlappy;
+    private CurrentPlayerText playerUsernameTextKevin;
+    private CurrentPlayerText playerUsernameTextFlappy;
 
 
     private int birdColor;
@@ -43,7 +43,7 @@ public class TitleScene extends DynamicScene {
 
     @Override
     public void setupEntities() {
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 6; i++){
             birdColor = i;
             if(birdColor == 3){
                 birdColor = randBirdSprite.nextInt(0,3);
@@ -65,13 +65,8 @@ public class TitleScene extends DynamicScene {
         addEntity(new ShopButton(stormbird, new Coordinate2D(getWidth()/2, getHeight()/2 + 250)));
 
 
-        playerUsernameTextKevin = new PlayerUsernameText("Kevin",getWidth()/3, getHeight()/2 + 135);
-        addEntity(playerUsernameTextKevin);
-        addEntity(new PlayerButton(playerUsernameTextKevin, new Coordinate2D(getWidth()/3, getHeight()/2 + 100), this));
-
-        playerUsernameTextFlappy = new PlayerUsernameText("Stormy",getWidth()/3 * 2, getHeight()/2 + 135);
-        addEntity(playerUsernameTextFlappy);
-        addEntity(new PlayerButton(playerUsernameTextFlappy, new Coordinate2D(getWidth()/3 * 2, getHeight()/2 + 100), this));
+        addEntity(new PlayerButton("sprites/Eric.png",new Coordinate2D(getWidth()/3, getHeight()/2 + 100), "Erick", new Size(50,50), player));
+        addEntity(new PlayerButton("sprites/Towelie.png",new Coordinate2D(getWidth()/3 * 2, getHeight()/2 + 100), "Towelie", new Size(100,100), player));
     }
 
     public String getActivePlayer() {

@@ -3,6 +3,7 @@ package nl.camorobot.stormbird.scenes;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import nl.camorobot.stormbird.Stormbird;
+import nl.camorobot.stormbird.assets.buttons.BackButton;
 import nl.camorobot.stormbird.assets.buttons.PlayButton;
 import nl.camorobot.stormbird.assets.imageEntitys.GameOverImg;
 import nl.camorobot.stormbird.assets.imageEntitys.StormBirdImg;
@@ -46,6 +47,6 @@ public class GameOverScene extends DynamicScene {
             addEntity(new TitleSceneBird(sprite, new Coordinate2D(0, getHeight()/2 + 50)));
         }
         addEntity(new GameOverImg(getWidth()/2, 100));
-        addEntity(new PlayButton(stormbird, new Coordinate2D(getWidth()/2, getHeight()/2 - 50)));
+        addEntity(new BackButton(stormbird, new Coordinate2D(getWidth()/2, getHeight()/2 - 50)));
     }
 }
