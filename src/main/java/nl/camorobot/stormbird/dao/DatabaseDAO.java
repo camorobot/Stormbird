@@ -9,7 +9,7 @@ import java.sql.*;
 public class DatabaseDAO {
     public Connection connect(){
         /** Create database connection */
-        String connectionUrl = "jdbc:sqlserver://localhost;database=Stormbird;user=sa;password=";
+        String connectionUrl = "jdbc:sqlserver://localhost;database=Stormbird;user=sa;password=23Kn@10#15";
         Connection con = null;
 
         try {
