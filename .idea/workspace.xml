@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72303d58-6a25-4496-ab74-91fc688517d0" name="Changes" comment="Add Game Over Scene">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/Eric.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/Stormy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/Towelie-select.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprites/Towelie.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/buttons/PlayerButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/buttons/PlayerButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/text/PlayerUsernameText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/text/CurrentPlayerText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/dao/DatabaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/dao/DatabaseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/ShopBird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/ShopBird.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/dao/PlayerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/dao/PlayerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/GameOverScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/GameOverScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/TitleScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/TitleScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sprites/player.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/ShopScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/ShopScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +99,7 @@
       <workItem from="1681895524397" duration="1230000" />
       <workItem from="1682004349717" duration="8960000" />
       <workItem from="1682063847547" duration="61000" />
-      <workItem from="1682095685879" duration="8644000" />
+      <workItem from="1682095685879" duration="13615000" />
     </task>
     <servers />
   </component>

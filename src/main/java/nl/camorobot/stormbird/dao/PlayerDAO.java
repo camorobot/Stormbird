@@ -35,4 +35,12 @@ public class PlayerDAO {
             throw new RuntimeException(e);
         }
     }
+
+    public void buyBird(Connection con, int player_id, int bird_id ) throws SQLException {
+        String SQL = "INSERT INTO [player_skins] VALUES (?,?)";
+        PreparedStatement stmt = con.prepareStatement(SQL);
+        stmt.setInt(1, player_id);
+        stmt.setInt(2, bird_id);
+        stmt.executeUpdate();
+    }
 }
