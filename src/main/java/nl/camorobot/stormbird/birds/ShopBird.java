@@ -8,6 +8,7 @@ import javafx.scene.input.MouseButton;
 import nl.camorobot.stormbird.dao.DatabaseDAO;
 import nl.camorobot.stormbird.dao.PlayerDAO;
 import nl.camorobot.stormbird.player.Player;
+import nl.camorobot.stormbird.scenes.ShopScene;
 
 import java.sql.SQLException;
 import java.util.Objects;
@@ -17,17 +18,22 @@ public class ShopBird extends SpriteEntity implements MouseButtonPressedListener
     private int _price;
     private String _sprite;
     private Player _player;
+    private ShopScene _shopScene;
 
-    public ShopBird(String sprite, Coordinate2D initialLocation, Integer price, Player player) {
+    public ShopBird(String sprite, Coordinate2D initialLocation, Integer price, Player player, ShopScene shopScene) {
         super(sprite, initialLocation, new Size(60,60));
         this._sprite = sprite;
         this._price = price;
         this._player = player;
+        this._shopScene = shopScene;
     }
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
         System.out.println(_sprite);
+        // kijk hier of je de bird al hebt, niet? dan buyBird() wel? dan moet je selectBird()
+        // kunnen we ophalen met een _shopscene.getUnlocked()
+
         try {
             buyBird(_sprite, _player.getPlayer_id());
         } catch (SQLException e) {
@@ -38,7 +44,7 @@ public class ShopBird extends SpriteEntity implements MouseButtonPressedListener
     public void buyBird(String _sprite, int player_id) throws SQLException {
         System.out.println(_player.getCoins());
         if(_player.getCoins() <100){
-            System.out.println("Sorry je hebt geeng geld.");
+            System.out.println("Sorry je hebt geen geld.");
         } else{
             int bird_id = 0;
             if(_sprite.equals("sprites/yellowbird-midflap.png")){
@@ -60,6 +66,7 @@ public class ShopBird extends SpriteEntity implements MouseButtonPressedListener
             DatabaseDAO databaseDAO = new DatabaseDAO();
             playerDAO.buyBird(databaseDAO.connect(), player_id, bird_id, _player.getCoins() - 100);
             _player.setCoins(_player.getCoins() - 100);
+            System.out.println("Buying bird successful");
         }
 
     }

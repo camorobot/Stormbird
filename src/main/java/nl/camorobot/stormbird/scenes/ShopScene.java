@@ -65,16 +65,20 @@ public class ShopScene extends DynamicScene {
         fillBirdsArray();
         addEntity(new BackButton(_stormbird, new Coordinate2D(70, 40)));
         addEntity(_coinText);
-        addEntity(new ShopBird("sprites/yellowbird-midflap.png", new Coordinate2D(80,250), 0, _player));
+        addEntity(new ShopBird("sprites/yellowbird-midflap.png", new Coordinate2D(80,250), 0, _player, this));
         addEntity(new CoinsText(new Coordinate2D(100, 300), 0, unlocked.get(0)));
-        addEntity(new ShopBird("sprites/bluebird-midflap.png", new Coordinate2D(220,250), 100, _player));
+        addEntity(new ShopBird("sprites/bluebird-midflap.png", new Coordinate2D(220,250), 100, _player, this));
         addEntity(new CoinsText(new Coordinate2D(getWidth()/2-30, 300), 100, unlocked.get(1)));
-        addEntity(new ShopBird("sprites/redbird-midflap.png", new Coordinate2D(380,250), 100, _player));
+        addEntity(new ShopBird("sprites/redbird-midflap.png", new Coordinate2D(380,250), 100, _player, this));
         addEntity(new CoinsText(new Coordinate2D(380, 300), 100, unlocked.get(2)));
-        addEntity(new ShopBird("sprites/pinkbird-midflap.png", new Coordinate2D(80,400), 100, _player));
+        addEntity(new ShopBird("sprites/pinkbird-midflap.png", new Coordinate2D(80,400), 100, _player, this));
         addEntity(new CoinsText(new Coordinate2D(80, 450), 100, unlocked.get(3)));
-        addEntity(new ShopBird("sprites/greenbird-midflap.png", new Coordinate2D(220,400), 100, _player));
+        addEntity(new ShopBird("sprites/greenbird-midflap.png", new Coordinate2D(220,400), 100, _player, this));
         addEntity(new CoinsText(new Coordinate2D(getWidth()/2-30, 450), 100, unlocked.get(4)));
-        System.out.println(unlocked.get(4));
+        System.out.println(unlocked);
+    }
+
+    public ArrayList<Boolean> getUnlocked() {
+        return unlocked;
     }
 }

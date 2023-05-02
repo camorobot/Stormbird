@@ -7,7 +7,7 @@
     <list default="true" id="72303d58-6a25-4496-ab74-91fc688517d0" name="Changes" comment="Add Game Over Scene">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/ShopBird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/birds/ShopBird.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/dao/PlayerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/dao/PlayerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/ShopScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/ShopScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +99,7 @@
       <workItem from="1682004349717" duration="8960000" />
       <workItem from="1682063847547" duration="61000" />
       <workItem from="1682095685879" duration="13615000" />
-      <workItem from="1683031319960" duration="1552000" />
+      <workItem from="1683031319960" duration="2368000" />
     </task>
     <servers />
   </component>
