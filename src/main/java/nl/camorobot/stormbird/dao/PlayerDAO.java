@@ -36,11 +36,19 @@ public class PlayerDAO {
         }
     }
 
-    public void buyBird(Connection con, int player_id, int bird_id ) throws SQLException {
-        String SQL = "INSERT INTO [player_skins] VALUES (?,?)";
-        PreparedStatement stmt = con.prepareStatement(SQL);
-        stmt.setInt(1, player_id);
-        stmt.setInt(2, bird_id);
-        stmt.executeUpdate();
+    public void buyBird(Connection con, int player_id, int bird_id, int coins) throws SQLException {
+        // buy bird
+        String SQLBird = "INSERT INTO [player_skins] VALUES (?,?)";
+        PreparedStatement stmtBird = con.prepareStatement(SQLBird);
+        stmtBird.setInt(1, player_id);
+        stmtBird.setInt(2, bird_id);
+        stmtBird.executeUpdate();
+
+        //decrease coins
+        String SQLCoins = "UPDATE [players] SET coins = ? WHERE player_id = ?";
+        PreparedStatement stmtCoins = con.prepareStatement(SQLCoins);
+        stmtCoins.setInt(1, coins);
+        stmtCoins.setInt(2, player_id);
+        stmtCoins.executeQuery();
     }
 }

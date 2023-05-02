@@ -58,7 +58,7 @@ public class ShopBird extends SpriteEntity implements MouseButtonPressedListener
             }
             PlayerDAO playerDAO = new PlayerDAO(_player);
             DatabaseDAO databaseDAO = new DatabaseDAO();
-            playerDAO.buyBird(databaseDAO.connect(), player_id, bird_id);
+            playerDAO.buyBird(databaseDAO.connect(), player_id, bird_id, _player.getCoins() - 100);
             _player.setCoins(_player.getCoins() - 100);
         }
 
