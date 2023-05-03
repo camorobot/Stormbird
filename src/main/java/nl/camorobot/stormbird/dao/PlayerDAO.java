@@ -49,6 +49,6 @@ public class PlayerDAO {
         PreparedStatement stmtCoins = con.prepareStatement(SQLCoins);
         stmtCoins.setInt(1, coins);
         stmtCoins.setInt(2, player_id);
-        stmtCoins.executeQuery();
+        stmtCoins.executeUpdate();
     }
 }

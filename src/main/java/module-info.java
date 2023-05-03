@@ -4,6 +4,7 @@ module Stormbird {
     requires mssql.jdbc;
 
     exports nl.camorobot.stormbird;
+    exports nl.camorobot.stormbird.birds;
 
     opens audio;
     opens backgrounds;

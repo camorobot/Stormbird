@@ -13,11 +13,14 @@ import nl.camorobot.stormbird.player.Player;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.function.Supplier;
 
 public class GameScene extends DynamicScene {
 
     private Stormbird stormbird;
     private Player player;
+    private PlayerBird _playerbird;
+    private Supplier<PlayerBird> playerBirdSupplier;
     private String sprite;
     private int nextTube;
 
@@ -25,9 +28,10 @@ public class GameScene extends DynamicScene {
     Tube bottomTube;
     SilverCoin silverCoin;
 
-    public GameScene(Stormbird stormbird, Player player){
+    public GameScene(Stormbird stormbird, Player player, Supplier<PlayerBird> playerBirdSupplier){
         this.stormbird = stormbird;
         this.player = player;
+        this.playerBirdSupplier = playerBirdSupplier;
         sprite = "sprites/yellowBird-midflap.png";
     }
 
@@ -65,7 +69,9 @@ public class GameScene extends DynamicScene {
         timerTubeGenerator.schedule(task, new Date(), 1000);
 
         /**Add Entity's to field*/
-        addEntity(new PlayerBird(stormbird, sprite,new Coordinate2D(getWidth() / 2, getHeight() / 2)));
+        PlayerBird currentPlayerBird = playerBirdSupplier.get();
+        addEntity(currentPlayerBird);
+        System.out.println(stormbird.get_playerBird());
         addEntity(topTube);
         addEntity(bottomTube);
         addEntity(silverCoin);
