@@ -26,9 +26,13 @@ public class CoinsText extends TextEntity {
         }
     }
 
-
     public void setCoins(int coins){
         this._coins = coins;
         setText(String.valueOf(coins));
     }
+
+    public void setTextVisibility(boolean visible) {
+        this.setVisible(visible);
+    }
+
 }
