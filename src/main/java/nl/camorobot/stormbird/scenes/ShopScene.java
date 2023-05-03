@@ -9,6 +9,7 @@ import nl.camorobot.stormbird.birds.ShopBird;
 import nl.camorobot.stormbird.player.Player;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ShopScene extends DynamicScene {
 
@@ -18,6 +19,10 @@ public class ShopScene extends DynamicScene {
     private ArrayList<Boolean> unlocked;
     private ArrayList<Integer> birds;
     private ArrayList<String> birdsSprites;
+    private ArrayList<CoinsText> birdTexts;
+    private ShopBird selectedBird;
+
+
 
     public ShopScene(Stormbird stormbird, Player player){
         this._stormbird = stormbird;
@@ -69,21 +74,61 @@ public class ShopScene extends DynamicScene {
         unlocked = new ArrayList<Boolean>();
         birds = new ArrayList<Integer>();
         birdsSprites = new ArrayList<String>();
+        birdTexts = new ArrayList<>();
+        selectedBird = null; // null betekent dat er geen vogel is geselecteerd
+
         fillBirdsArray();
         addEntity(new BackButton(_stormbird, new Coordinate2D(70, 40)));
         addEntity(_coinText);
         addEntity(new ShopBird(_stormbird, "sprites/yellowbird-midflap.png", new Coordinate2D(80,250), 0, _player, this));
-        addEntity(new CoinsText(new Coordinate2D(100, 300), 0, unlocked.get(0)));
+//        addEntity(new CoinsText(new Coordinate2D(100, 300), 0, unlocked.get(0)));
         addEntity(new ShopBird(_stormbird, "sprites/bluebird-midflap.png", new Coordinate2D(220,250), 100, _player, this));
-        addEntity(new CoinsText(new Coordinate2D(getWidth()/2-30, 300), 100, unlocked.get(1)));
+//        addEntity(new CoinsText(new Coordinate2D(getWidth()/2-30, 300), 100, unlocked.get(1)));
         addEntity(new ShopBird(_stormbird, "sprites/redbird-midflap.png", new Coordinate2D(380,250), 100, _player, this));
-        addEntity(new CoinsText(new Coordinate2D(380, 300), 100, unlocked.get(2)));
+//        addEntity(new CoinsText(new Coordinate2D(380, 300), 100, unlocked.get(2)));
         addEntity(new ShopBird(_stormbird, "sprites/pinkbird-midflap.png", new Coordinate2D(80,400), 100, _player, this));
-        addEntity(new CoinsText(new Coordinate2D(80, 450), 100, unlocked.get(3)));
+//        addEntity(new CoinsText(new Coordinate2D(80, 450), 100, unlocked.get(3)));
         addEntity(new ShopBird(_stormbird, "sprites/greenbird-midflap.png", new Coordinate2D(220,400), 100, _player, this));
-        addEntity(new CoinsText(new Coordinate2D(getWidth()/2-30, 450), 100, unlocked.get(4)));
+//        addEntity(new CoinsText(new Coordinate2D(getWidth()/2-30, 450), 100, unlocked.get(4)));
         System.out.println(birds);
         System.out.println(unlocked);
+
+        birdTexts.add(new CoinsText(new Coordinate2D(100, 300), 0, unlocked.get(0)));
+        birdTexts.add(new CoinsText(new Coordinate2D(getWidth()/2-30, 300), 100, unlocked.get(1)));
+        birdTexts.add(new CoinsText(new Coordinate2D(380, 300), 100, unlocked.get(2)));
+        birdTexts.add(new CoinsText(new Coordinate2D(80, 450), 100, unlocked.get(3)));
+        birdTexts.add(new CoinsText(new Coordinate2D(getWidth()/2-30, 450), 100, unlocked.get(4)));
+
+        for (CoinsText birdText : birdTexts) {
+            addEntity(birdText);
+        }
+
+
+
+// Voeg soortgelijke code toe voor de andere vogels
+
+    }
+
+    public void updateSelectedText(int birdIndex) {
+        hideOwnedText();
+        birdTexts.get(birdIndex).setText("Selected");
+        showOwnedText();
+    }
+
+    public void hideOwnedText() {
+        for (int i = 0; i < birdTexts.size(); i++) {
+            if (unlocked.get(i)) {
+                birdTexts.get(i).setTextVisibility(false);
+            }
+        }
+    }
+
+    public void showOwnedText() {
+        for (int i = 0; i < birdTexts.size(); i++) {
+            if (unlocked.get(i)) {
+                birdTexts.get(i).setTextVisibility(true);
+            }
+        }
     }
 
     public ArrayList<Boolean> getUnlocked() {
@@ -95,5 +140,16 @@ public class ShopScene extends DynamicScene {
     public ArrayList<String> getBirdsSprites() {
         return birdsSprites;
     }
+    public ShopBird getSelectedBird() {
+        return selectedBird;
+    }
+
+    public void setSelectedBird(ShopBird selectedBird) {
+        this.selectedBird = selectedBird;
+    }
+    public List<CoinsText> getBirdTexts() {
+        return birdTexts;
+    }
+
 
 }

@@ -37,10 +37,21 @@ public class ShopBird extends SpriteEntity implements MouseButtonPressedListener
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
         // kijk hier of je de bird al hebt, niet? dan buyBird() wel? dan moet je selectBird()
         // kunnen we ophalen met een _shopscene.getUnlocked()
-        if(_shopScene.getBirdsSprites().contains(_sprite)){
-            //bird is unlocked
+        if (_shopScene.getBirdsSprites().contains(_sprite)) {
+            // bird is unlocked
+
+            // Als er een andere vogel eerder is geselecteerd, wijzig de tekst van die vogel naar "Owned"
+            if (_shopScene.getSelectedBird() != null && !_shopScene.getSelectedBird().equals(this)) {
+                int previousSelectedIndex = _shopScene.getBirdsSprites().indexOf(_shopScene.getSelectedBird().getSprite());
+                _shopScene.getBirdTexts().get(previousSelectedIndex).setText("Owned");
+            }
+
+            // Selecteer de huidige vogel en wijzig de tekst naar "Selected"
+            _shopScene.setSelectedBird(this);
             _stormbird.set_playerBird(new PlayerBird(_stormbird, _sprite, new Coordinate2D(getWidth(), getHeight())));
-        } else{
+            int currentIndex = _shopScene.getBirdsSprites().indexOf(_sprite);
+            _shopScene.getBirdTexts().get(currentIndex).setText("Selected");
+        } else {
             try {
                 buyBird(_sprite, _player.getPlayer_id());
             } catch (SQLException e) {
@@ -48,6 +59,8 @@ public class ShopBird extends SpriteEntity implements MouseButtonPressedListener
             }
         }
     }
+
+
 
     public void buyBird(String _sprite, int player_id) throws SQLException {
         System.out.println(_player.getCoins());
@@ -77,6 +90,10 @@ public class ShopBird extends SpriteEntity implements MouseButtonPressedListener
             _stormbird.set_playerBird(new PlayerBird(_stormbird, _sprite, new Coordinate2D(getWidth(), getHeight())));
             System.out.println("Buying bird successful");
         }
-
     }
+
+    public String getSprite() {
+        return _sprite;
+    }
+
 }
