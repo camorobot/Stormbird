@@ -9,6 +9,7 @@ import nl.camorobot.stormbird.assets.buttons.PlayerButton;
 import nl.camorobot.stormbird.assets.buttons.ShopButton;
 import nl.camorobot.stormbird.assets.imageEntitys.StormBirdImg;
 import nl.camorobot.stormbird.assets.text.CurrentPlayerText;
+import nl.camorobot.stormbird.birds.PlayerBird;
 import nl.camorobot.stormbird.birds.TitleSceneBird;
 import nl.camorobot.stormbird.dao.PlayerDAO;
 import nl.camorobot.stormbird.player.Player;
@@ -22,7 +23,6 @@ public class TitleScene extends DynamicScene {
     private PlayerDAO playerDAO;
     private CurrentPlayerText playerUsernameTextKevin;
     private CurrentPlayerText playerUsernameTextFlappy;
-
 
     private int birdColor;
     private String sprite;
