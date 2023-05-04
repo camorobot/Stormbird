@@ -7,7 +7,7 @@ import nl.camorobot.stormbird.assets.text.ScoreText;
 import nl.camorobot.stormbird.birds.PlayerBird;
 import nl.camorobot.stormbird.objects.Ground;
 import nl.camorobot.stormbird.objects.Tube;
-import nl.camorobot.stormbird.objects.coins.SilverCoin;
+import nl.camorobot.stormbird.observers.ScoreObserver;
 import nl.camorobot.stormbird.player.Player;
 
 import java.util.Date;
@@ -15,7 +15,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.function.Supplier;
 
-public class GameScene extends DynamicScene {
+public class GameScene extends DynamicScene implements ScoreObserver {
 
     private Stormbird stormbird;
     private Player player;
@@ -26,7 +26,6 @@ public class GameScene extends DynamicScene {
 
     Tube topTube;
     Tube bottomTube;
-    SilverCoin silverCoin;
 
     public GameScene(Stormbird stormbird, Player player, Supplier<PlayerBird> playerBirdSupplier){
         this.stormbird = stormbird;
@@ -50,11 +49,9 @@ public class GameScene extends DynamicScene {
         /**Generate the tubes*/
         var scoreText = new ScoreText(new Coordinate2D(0, 0));
         addEntity(scoreText);
-        silverCoin = new SilverCoin(player, getWidth(), -349);
+        scoreText.addObserver(this); // Add GameScene as an observer
         topTube = new Tube("sprites/pipe-green-top-2.png", "top", scoreText, getWidth(), -349);
         bottomTube = new Tube("sprites/pipe-green-bottom-2.png", "bottom" , getWidth(), -349);
-
-
 
         /**Timer for generating new tube location*/
         Timer timerTubeGenerator = new Timer();
@@ -63,7 +60,6 @@ public class GameScene extends DynamicScene {
                 nextTube = topTube.getRandomTube();
                 topTube.setTubeNumber(nextTube);
                 bottomTube.setTubeNumber(nextTube);
-//                silverCoin.setTubeNumber(nextTube);
             }
         };
         timerTubeGenerator.schedule(task, new Date(), 1000);
@@ -74,10 +70,33 @@ public class GameScene extends DynamicScene {
         System.out.println(stormbird.get_playerBird());
         addEntity(topTube);
         addEntity(bottomTube);
-        addEntity(silverCoin);
 
         for(int numberOfGroundEntitys = 1; numberOfGroundEntitys <= 20; numberOfGroundEntitys++){
             addEntity(new Ground(getWidth() * numberOfGroundEntitys, getHeight()));
         }
     }
+
+    @Override
+    public void onScoreUpdate(int newScore) {
+        double newSpeed = topTube.getSpeed();
+        if (newScore == 10) {
+            // Verhoog de snelheid met 15%
+            newSpeed = topTube.getSpeed() * 1.15;
+        }
+        if (newScore == 20){
+            // Verhoog de snelheid met 30%
+            newSpeed = topTube.getSpeed() * 1.30;
+        }
+        if (newScore == 30){
+            // Verhoog de snelheid met 45%
+            newSpeed = topTube.getSpeed() * 1.45;
+        }
+        if (newScore == 40){
+            // Verhoog de snelheid met 60%
+            newSpeed = topTube.getSpeed() * 1.60;
+        }
+        topTube.updateSpeed(newSpeed);
+        bottomTube.updateSpeed(newSpeed);
+    }
 }
+
