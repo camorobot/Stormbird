@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72303d58-6a25-4496-ab74-91fc688517d0" name="Changes" comment="Add Game Over Scene">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/MovingObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/observers/ScoreObserver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/Ground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/Ground.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/objects/Tube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/text/ScoreText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/assets/text/ScoreText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/GameScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/camorobot/stormbird/scenes/GameScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +20,7 @@
       <list>
         <option value="module-info" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -101,7 +102,7 @@
       <workItem from="1682063847547" duration="61000" />
       <workItem from="1682095685879" duration="13615000" />
       <workItem from="1683031319960" duration="12955000" />
-      <workItem from="1683192595477" duration="1716000" />
+      <workItem from="1683192595477" duration="2759000" />
     </task>
     <servers />
   </component>
