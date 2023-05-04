@@ -7,18 +7,18 @@ import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
 import javafx.scene.input.MouseButton;
 import nl.camorobot.stormbird.Stormbird;
 
-public class PlayButton extends SpriteEntity implements MouseButtonPressedListener {
+public class BackButton extends SpriteEntity implements MouseButtonPressedListener {
 
-    private Stormbird stormbird;
+    private Stormbird _stormbird;
 
-    public PlayButton(Stormbird stormbird, Coordinate2D coordinate2D){
-        super("sprites/PlayGame.png", coordinate2D);
-        this.stormbird = stormbird;
+    public BackButton(Stormbird stormbird, Coordinate2D coordinate2D){
+        super("sprites/backButton.png", coordinate2D);
+        this._stormbird = stormbird;
         setAnchorPoint(AnchorPoint.CENTER_CENTER);
     }
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        stormbird.setActiveScene(1);
+        _stormbird.setActiveScene(0);
     }
 }
