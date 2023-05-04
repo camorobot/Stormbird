@@ -5,11 +5,16 @@ import com.microsoft.sqlserver.jdbc.SQLServerDriver;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.*;
+import io.github.cdimascio.dotenv.Dotenv;
 
 public class DatabaseDAO {
+    Dotenv dotenv = null;
+
     public Connection connect(){
+        dotenv = Dotenv.configure().load();
+
         /** Create database connection */
-        String connectionUrl = "jdbc:sqlserver://localhost;database=Stormbird;user=sa;password=23Kn@10#15";
+        String connectionUrl = String.format("jdbc:sqlserver://localhost;database=Stormbird;user=sa;password=%s", dotenv.get("DBPASS"));
         Connection con = null;
 
         try {
