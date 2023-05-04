@@ -39,3 +39,4 @@ build/
 
 DatabaseDAO.java
 DatabaseDAO.java
+.env
