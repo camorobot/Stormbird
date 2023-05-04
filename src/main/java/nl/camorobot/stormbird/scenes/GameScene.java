@@ -2,6 +2,8 @@ package nl.camorobot.stormbird.scenes;
 
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.scenes.DynamicScene;
+import com.github.hanyaeger.api.userinput.KeyListener;
+import javafx.scene.input.KeyCode;
 import nl.camorobot.stormbird.Stormbird;
 import nl.camorobot.stormbird.assets.text.ScoreText;
 import nl.camorobot.stormbird.birds.PlayerBird;
@@ -13,9 +15,10 @@ import nl.camorobot.stormbird.player.Player;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.Set;
 import java.util.function.Supplier;
 
-public class GameScene extends DynamicScene implements ScoreObserver {
+public class GameScene extends DynamicScene implements ScoreObserver, KeyListener {
 
     private Stormbird stormbird;
     private Player player;
@@ -46,6 +49,12 @@ public class GameScene extends DynamicScene implements ScoreObserver {
 
     @Override
     public void setupEntities() {
+        // Initialiseer de PlayerBird entiteit met de juiste zwaartekracht en wrijvingsconstante
+        _playerbird = playerBirdSupplier.get();
+        _playerbird.setGravityConstant(0.75);
+        _playerbird.setFrictionConstant(0.05);
+        addEntity(_playerbird);
+
         /**Generate the tubes*/
         var scoreText = new ScoreText(new Coordinate2D(0, 0));
         addEntity(scoreText);
@@ -65,9 +74,6 @@ public class GameScene extends DynamicScene implements ScoreObserver {
         timerTubeGenerator.schedule(task, new Date(), 1000);
 
         /**Add Entity's to field*/
-        PlayerBird currentPlayerBird = playerBirdSupplier.get();
-        addEntity(currentPlayerBird);
-        System.out.println(stormbird.get_playerBird());
         addEntity(topTube);
         addEntity(bottomTube);
 
@@ -81,7 +87,7 @@ public class GameScene extends DynamicScene implements ScoreObserver {
         double newSpeed = topTube.getSpeed();
         if (newScore == 10) {
             // Verhoog de snelheid met 15%
-            newSpeed = topTube.getSpeed() * 1.15;
+            newSpeed = topTube.getSpeed() *        1.15;
         }
         if (newScore == 20){
             // Verhoog de snelheid met 30%
@@ -98,5 +104,11 @@ public class GameScene extends DynamicScene implements ScoreObserver {
         topTube.updateSpeed(newSpeed);
         bottomTube.updateSpeed(newSpeed);
     }
+
+    @Override
+    public void onPressedKeysChange(Set<KeyCode> set) {
+        _playerbird.handleKeys(set);
+    }
+    
 }
 
