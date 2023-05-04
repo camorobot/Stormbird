@@ -25,21 +25,5 @@ public class CurrentPlayerText extends TextEntity {
         return _currentPlayer;
     }
 
-
-//    public void set_currentPlayer(String playerText, AnchorPoint AP) {
-//        setAnchorPoint(AP);
-//        setFont(Font.font("Roboto", FontWeight.LIGHT, 25));
-//        setFill(Color.BLACK);
-//        setUsernameText(playerText);
-//        setText(playerText);
-//    }
-//
-//    public String getUsernameText() {
-//        return _currentPlayer;
-//    }
-//
-//    public void setUsernameText(String usernameText) {
-//        this._currentPlayer = usernameText;
-//    }
 }
 

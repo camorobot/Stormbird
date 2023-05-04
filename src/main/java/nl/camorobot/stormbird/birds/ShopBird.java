@@ -13,7 +13,6 @@ import nl.camorobot.stormbird.scenes.ShopScene;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class ShopBird extends SpriteEntity implements MouseButtonPressedListener {
 
