@@ -49,8 +49,8 @@ public class GameScene extends DynamicScene implements ScoreObserver {
         /**Generate the tubes*/
         var scoreText = new ScoreText(new Coordinate2D(0, 0));
         addEntity(scoreText);
-        scoreText.addObserver(this); // Add GameScene as an observer
-        topTube = new Tube("sprites/pipe-green-top-2.png", "top", scoreText, getWidth(), -349);
+        scoreText.addObserver(this);
+        topTube = new Tube("sprites/pipe-green-top-2.png", "top", scoreText, getWidth(), -349, stormbird);
         bottomTube = new Tube("sprites/pipe-green-bottom-2.png", "bottom" , getWidth(), -349);
 
         /**Timer for generating new tube location*/

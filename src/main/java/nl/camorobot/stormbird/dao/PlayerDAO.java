@@ -1,5 +1,6 @@
 package nl.camorobot.stormbird.dao;
 
+import nl.camorobot.stormbird.objects.coins.Coin;
 import nl.camorobot.stormbird.player.Player;
 
 import java.sql.Connection;
@@ -50,5 +51,23 @@ public class PlayerDAO {
         stmtCoins.setInt(1, coins);
         stmtCoins.setInt(2, player_id);
         stmtCoins.executeUpdate();
+    }
+
+    public void updateCoins(Connection con, int player_id, int score) throws SQLException{
+        int _coins = score;
+        String getCurrentCoinsSQL = "SELECT coins FROM [players] where player_id = ?";
+        PreparedStatement stmtGetCoins= con.prepareStatement(getCurrentCoinsSQL);
+        stmtGetCoins.setInt(1, player_id);
+        ResultSet rs = stmtGetCoins.executeQuery();
+        while (rs.next()){
+            _coins += rs.getInt("coins");
+        }
+
+        String setCoinsSQL = "UPDATE [players] set coins = ? where player_id = ?";
+        PreparedStatement stmtSetCoins = con.prepareStatement(setCoinsSQL);
+        stmtSetCoins.setInt(1, _coins);
+        stmtSetCoins.setInt(2, player_id);
+        System.out.println("updateCoins: "+ _coins);
+        stmtSetCoins.executeUpdate();
     }
 }

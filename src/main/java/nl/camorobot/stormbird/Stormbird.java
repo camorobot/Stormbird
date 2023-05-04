@@ -11,6 +11,8 @@ import nl.camorobot.stormbird.scenes.ShopScene;
 import nl.camorobot.stormbird.scenes.TitleScene;
 
 public class Stormbird extends YaegerGame {
+    private int score;
+
     Player player = new Player(this);
     private PlayerBird _playerBird = new PlayerBird(this, "sprites/yellowbird-midflap.png", new Coordinate2D(250, 375));;
 
@@ -38,5 +40,13 @@ public class Stormbird extends YaegerGame {
 
     public PlayerBird get_playerBird() {
         return _playerBird;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 }

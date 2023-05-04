@@ -8,8 +8,11 @@ import nl.camorobot.stormbird.assets.buttons.PlayButton;
 import nl.camorobot.stormbird.assets.imageEntitys.GameOverImg;
 import nl.camorobot.stormbird.assets.imageEntitys.StormBirdImg;
 import nl.camorobot.stormbird.birds.TitleSceneBird;
+import nl.camorobot.stormbird.dao.DatabaseDAO;
+import nl.camorobot.stormbird.dao.PlayerDAO;
 import nl.camorobot.stormbird.player.Player;
 
+import java.sql.SQLException;
 import java.util.Random;
 
 public class GameOverScene extends DynamicScene {
@@ -18,6 +21,7 @@ public class GameOverScene extends DynamicScene {
     private int birdColor;
     private String sprite;
     private Random randBirdSprite = new Random();
+    private PlayerDAO _playerDAO = new PlayerDAO(player);
 
 
     public GameOverScene(Stormbird stormbird, Player player){
@@ -48,5 +52,12 @@ public class GameOverScene extends DynamicScene {
         }
         addEntity(new GameOverImg(getWidth()/2, 100));
         addEntity(new BackButton(stormbird, new Coordinate2D(getWidth()/2, getHeight()/2 - 50)));
+
+        try {
+            System.out.println("stormbird score : "+stormbird.getScore());
+            _playerDAO.updateCoins(new DatabaseDAO().connect(), player.getPlayer_id(), stormbird.getScore());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
