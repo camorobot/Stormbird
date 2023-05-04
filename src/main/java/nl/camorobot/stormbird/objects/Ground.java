@@ -2,12 +2,9 @@ package nl.camorobot.stormbird.objects;
 
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.entities.Collider;
-import com.github.hanyaeger.api.entities.SceneBorderCrossingWatcher;
-import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 
-public class Ground extends DynamicSpriteEntity implements SceneBorderCrossingWatcher, Collider {
+public class Ground extends MovingObject {
 
     private double width;
     private double height;
@@ -16,7 +13,6 @@ public class Ground extends DynamicSpriteEntity implements SceneBorderCrossingWa
         super("sprites/base-long.png", new Coordinate2D(width, height));
         this.width = width;
         this.height = height;
-        setMotion(6, 270d);
     }
 
     @Override
@@ -25,4 +21,8 @@ public class Ground extends DynamicSpriteEntity implements SceneBorderCrossingWa
         setAnchorLocation(new Coordinate2D(width, height));
     }
 
+    @Override
+    public void updateSpeed(double newSpeed) {
+        super.updateSpeed(newSpeed);
+    }
 }
